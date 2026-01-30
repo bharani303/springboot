@@ -7,8 +7,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@CrossOrigin(origins = "*")
 @RestController
-@CrossOrigin(origins = "http://127.0.0.1:5500")
 public class controller_students {
     @Autowired
     Service_student ss;
@@ -26,17 +33,17 @@ public class controller_students {
     ) {
         student s = new student(rollno, name, age ,dept);
         ss.add(s);
-        return "added..";
+        return "added... on.... deathnotes..";
     }
     @PutMapping("/update")
     public String addd(@RequestBody student s){
         ss.updated(s);
-        return "updated..";
+        return "updated..successfully bro....";
     }
     @DeleteMapping("/delete/{id}")
     public String delete(@PathVariable int id) {
         ss.deleteById(id);
-        return "deleted";
+        return "deleted da lava***...";
     }
 
 }
