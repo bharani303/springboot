@@ -18,6 +18,10 @@ public class controller_students {
     @Autowired
     Service_student ss;
 
+    @RequestMapping(value = "/**", method = RequestMethod.OPTIONS)
+    public void handleOptions() {
+    }
+
     @GetMapping("/all")
     public List<student> alll(){
         return ss.allStudents();
