@@ -2,6 +2,7 @@ FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
 
+# copy entire repo (pom.xml, mvnw, apitest/)
 COPY . .
 
 RUN chmod +x mvnw
